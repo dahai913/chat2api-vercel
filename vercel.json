@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "devCommand": "uvicorn chat2api:app --host 0.0.0.0 --port 3000",
+  "builds": [
+    {
+      "src": "chat2api.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "chat2api.py"
+    }
+  ]
+}
